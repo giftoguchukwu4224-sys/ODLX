@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-serif: "Georgia", serif;
+  
+  --color-brand-red: #FF0000;
+  --color-brand-black: #050505;
+  --color-brand-offwhite: #F5F5F0;
+  
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-badge-rotate: rotate 20s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-offwhite font-sans selection:bg-brand-red selection:text-white;
+    cursor: none;
+  }
+  
+  h1 {
+    @apply font-serif leading-[0.9] tracking-[-0.04em];
+  }
+
+  h2, h3, h4, .serif {
+    @apply font-serif;
+  }
+}
+
+/* Custom Cursor Styles */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  mix-blend-mode: difference;
+}
+
+#custom-cursor.hovering {
+  transform: translate(-50%, -50%) scale(4);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+  
+  .glass {
+    @apply bg-brand-black/40 backdrop-blur-md border border-white/10;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Artistic Flair specifics */
+  .editorial-sidebar-bg {
+    background-color: #0A0A0A;
+  }
+
+  .product-card-bg {
+    background-color: #111;
+  }
+
+  .border-flair {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .floating-badge {
+    @apply border border-dashed border-white/20 rounded-full flex items-center justify-center text-center animate-badge-rotate;
+  }
+
+  nav a.active-link {
+    @apply opacity-100 border-b border-brand-red pb-1;
+  }
+}

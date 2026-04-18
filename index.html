@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ODLX | Premium Luxury Streetwear & Architectural Fashion</title>
+    <meta name="description" content="High-converting, visually striking technical fashion and streetwear from ODLX. Defining the landscape of the modern nomad." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ODLX | Premium Luxury Streetwear" />
+    <meta property="og:description" content="Technical excellence meets editorial aesthetics. Explore the Nexus System V.1." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://odlx.studio" />
+    <meta property="og:image" content="https://picsum.photos/seed/odlx-og/1200/630" />
+    
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>O</text></svg>" />
+    
+    <style>
+      /* Initial loader */
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s ease-out, visibility 0.8s;
+      }
+      
+      .loader-logo {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        font-size: 4rem;
+        letter-spacing: -0.05em;
+        color: #fff;
+        margin-bottom: 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: logoIn 1.5s ease forwards;
+        font-style: italic;
+      }
+      
+      .loader-bar {
+        width: 200px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .loader-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #FF0000;
+        width: 0%;
+        animation: progress 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      
+      @keyframes logoIn {
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes progress {
+        to { width: 100%; }
+      }
+      
+      body.loaded #initial-loader {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* Hide custom cursor on mobile */
+      @media (max-width: 1024px) {
+        #custom-cursor { display: none !important; }
+        body { cursor: auto !important; }
+      }
+
+      /* Base layout stability */
+      body {
+        margin: 0;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="initial-loader">
+      <div class="loader-logo">ODLX</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.body.classList.add('loaded');
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
+
