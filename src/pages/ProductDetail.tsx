@@ -233,12 +233,12 @@ export const ProductDetail = () => {
             <span className="text-[10px] text-brand-red font-bold uppercase tracking-[0.4em]">Product Story</span>
             <h2 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">Designed for <br /> the Unseen.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
-               <p className="text-white/60 leading-relaxed text-lg font-light">
-                 The {product.name} represents the pinnacle of Nexus Drop 024. Inspired by the vertical silhouettes of Tokyo at midnight, our studio spent 18 months refining the textile weight to ensure perfect drape without sacrificing durability.
-               </p>
-               <p className="text-white/60 leading-relaxed text-lg font-light">
-                 Each unit is laser-cut and hand-finished in our London atelier. The modular integration allow for seamless layering across the entire ODLX collection. This isn't just a garment; it's a mobile environment.
-               </p>
+                <p className="text-white/60 leading-relaxed text-lg font-light">
+                  The {product.name} represents the pinnacle of Nexus Drop 024. Inspired by the intersection of ancestral silhouettes and the vertical geometry of the future, our studio spent months refining the textile weight.
+                </p>
+                <p className="text-white/60 leading-relaxed text-lg font-light">
+                  Each unit is laser-cut and hand-finished in our London atelier, blending heritage craftsmanship with technical precision. This isn't just a garment; it's a mobile environment for the modern nomad.
+                </p>
             </div>
           </div>
         </div>

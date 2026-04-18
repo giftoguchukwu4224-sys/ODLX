@@ -14,7 +14,7 @@ export const Shop = () => {
   const [sortBy, setSortBy] = useState<string>('featured');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const categories = ['All', 'Outerwear', 'Knitwear', 'Tops', 'Bottoms', 'Footwear'];
+  const categories = ['All', 'Outerwear', 'Tops', 'Bottoms', 'Accessories'];
 
   const filteredProducts = products
     .filter(p => {
